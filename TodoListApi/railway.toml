@@ -1,9 +1,9 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cd TodoListApi && dotnet restore && dotnet publish -c Release -o out"
+buildCommand = "dotnet restore TodoListApi/TodoListApi.csproj && dotnet publish TodoListApi/TodoListApi.csproj -c Release -o out"
 
 [deploy]
-startCommand = "cd TodoListApi/out && dotnet TodoListApi.dll"
+startCommand = "cd out && dotnet TodoListApi.dll"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "on-failure"
