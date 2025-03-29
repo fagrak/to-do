@@ -16,6 +16,7 @@ builder.Services.AddCors(options =>
     {
         builder.WithOrigins(
                 "https://todo-client-new.vercel.app",  // Vercel frontend URL
+                "https://*.railway.app",              // Railway backend URL
                 "http://localhost:3000"                // Local development
             )
             .AllowAnyMethod()
