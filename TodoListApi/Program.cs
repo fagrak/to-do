@@ -14,9 +14,12 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
+        builder.WithOrigins(
+                "https://todo-client-new.vercel.app",  // Vercel frontend URL
+                "http://localhost:3000"                // Local development
+            )
+            .AllowAnyMethod()
+            .AllowAnyHeader();
     });
 });
 
